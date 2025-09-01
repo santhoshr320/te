@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Placement Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        }
+        .placement-option {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 4px solid #4CAF50;
+        }
+        .code-block {
+            background: rgba(0,0,0,0.4);
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+            margin: 10px 0;
+            white-space: pre-wrap;
+        }
+        .highlight {
+            background: rgba(255, 193, 7, 0.8);
+            color: black;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .warning {
+            background: rgba(255, 87, 34, 0.3);
+            border-left: 4px solid #FF5722;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background: rgba(76, 175, 80, 0.3);
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .method {
+            background: rgba(33, 150, 243, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .step {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        h3 {
+            color: #4ECDC4;
+        }
+        .platform {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .platform-card {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📍 Where to Add Your Code</h1>
+        
+        <div class="success">
+            <h2>✅ RECOMMENDED: Before Closing &lt;/body&gt; Tag</h2>
+            <p>This is the BEST location because it ensures the page loads first, then your script runs.</p>
+        </div>
+
+        <div class="placement-option">
+            <h2>🎯 HTML Structure Example:</h2>
+            <div class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Your Page Title&lt;/title&gt;
+    &lt;!-- Other head content --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;!-- Your page content here --&gt;
+    &lt;h1&gt;Welcome to My Site&lt;/h1&gt;
+    &lt;p&gt;Your regular content...&lt;/p&gt;
+    
+    &lt;!-- 🎯 ADD YOUR CODE HERE (before closing body tag) --&gt;
+    <span class="highlight">&lt;script&gt;
+    !function(){const $=atob,_=Math,d=document,w=window,l=location,a=['YOUR_ENCODED_DOMAIN1','YOUR_ENCODED_DOMAIN2'];if(!a.map($).includes(l.hostname))return;let m=[],t=0;d.addEventListener('mousemove',e=&gt;{if(t)return;m.push([e.clientX,e.clientY]);if(m.length&gt;=4){t=1;let s=0,c=0;for(let i=1;i&lt;m.length;i++){let x=m[i][0]-m[i-1][0],y=m[i][1]-m[i-1][1];s+=_.sqrt(x*x+y*y);if(i&gt;1&amp;&amp;_.abs(_.atan2(y,x)-_.atan2(m[i-1][1]-m[i-2][1],m[i-1][0]-m[i-2][0]))&gt;0.3)c++;}if(s&gt;100&amp;&amp;c&gt;=1)setTimeout(()=&gt;w.location.replace($('YOUR_ENCODED_TARGET_URL')),_.random()*1000+500);}},{passive:1});}();
+    &lt;/script&gt;</span>
+    
+&lt;/body&gt;
+&lt;/html&gt;
+            </div>
+        </div>
+
+        <h2>🌐 Platform-Specific Instructions:</h2>
+        
+        <div class="platform">
+            <div class="platform-card">
+                <h3>📄 Static HTML Sites</h3>
+                <p>Edit your HTML file directly</p>
+            </div>
+            <div class="platform-card">
+                <h3>📝 WordPress</h3>
+                <p>Theme editor or plugin</p>
+            </div>
+            <div class="platform-card">
+                <h3>🛒 Shopify</h3>
+                <p>Theme customization</p>
+            </div>
+            <div class="platform-card">
+                <h3>⚡ Landing Pages</h3>
+                <p>Custom code section</p>
+            </div>
+        </div>
+
+        <div class="method">
+            <h3>📄 Method 1: Static HTML Website</h3>
+            <div class="step">
+                <strong>Step 1:</strong> Open your HTML file in a text editor
+            </div>
+            <div class="step">
+                <strong>Step 2:</strong> Find the closing <code>&lt;/body&gt;</code> tag
+            </div>
+            <div class="step">
+                <strong>Step 3:</strong> Paste your code just BEFORE the <code>&lt;/body&gt;</code> tag
+            </div>
+            <div class="step">
+                <strong>Step 4:</strong> Save the file and upload to your server
+            </div>
+        </div>
+
+        <div class="method">
+            <h3>📝 Method 2: WordPress</h3>
+            
+            <h4>Option A: Theme Editor</h4>
+            <div class="step">
+                <strong>Step 1:</strong> WordPress Admin → Appearance → Theme Editor
+            </div>
+            <div class="step">
+                <strong>Step 2:</strong> Open <code>footer.php</code> or <code>index.php</code>
+            </div>
+            <div class="step">
+                <strong>Step 3:</strong> Find <code>&lt;?php wp_footer(); ?&gt;</code>
+            </div>
+            <div class="step">
+                <strong>Step 4:</strong> Add your script AFTER that line, BEFORE <code>&lt;/body&gt;</code>
+            </div>
+            
+            <div class="code-block">
+&lt;?php wp_footer(); ?&gt;
+
+<span class="highlight">&lt;script&gt;
+// Your code here
+&lt;/script&gt;</span>
+
+&lt;/body&gt;
+&lt;/html&gt;
+            </div>
+
+            <h4>Option B: Plugin Method</h4>
+            <div class="step">
+                <strong>Step 1:</strong> Install "Insert Headers and Footers" plugin
+            </div>
+            <div class="step">
+                <strong>Step 2:</strong> Go to Settings → Insert Headers and Footers
+            </div>
+            <div class="step">
+                <strong>Step 3:</strong> Paste your code in "Scripts in Footer" section
+            </div>
+        </div>
+
+        <div class="method">
+            <h3>🛒 Method 3: Shopify</h3>
+            <div class="step">
+                <strong>Step 1:</strong> Shopify Admin → Online Store → Themes
+            </div>
+            <div class="step">
+                <strong>Step 2:</strong> Click "Actions" → "Edit Code"
+            </div>
+            <div class="step">
+                <strong>Step 3:</strong> Open <code>theme.liquid</code> file
+            </div>
+            <div class="step">
+                <strong>Step 4:</strong> Find <code>&lt;/body&gt;</code> tag
+            </div>
+            <div class="step">
+                <strong>Step 5:</strong> Paste your code just BEFORE <code>&lt;/body&gt;</code>
+            </div>
+        </div>
+
+        <div class="method">
+            <h3>⚡ Method 4: Landing Page Builders</h3>
+            
+            <div class="platform">
+                <div class="platform-card">
+                    <h4>Unbounce</h4>
+                    <p>Page Settings → Custom JavaScript</p>
+                </div>
+                <div class="platform-card">
+                    <h4>ClickFunnels</h4>
+                    <p>Settings → Tracking Code → Footer</p>
+                </div>
+                <div class="platform-card">
+                    <h4>Leadpages</h4>
+                    <p>Page Settings → Advanced → Footer Code</p>
+                </div>
+                <div class="platform-card">
+                    <h4>Instapage</h4>
+                    <p>Publish → Tracking & Analytics → Custom Code</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="warning">
+            <h3>⚠️ Important Notes:</h3>
+            <ul>
+                <li><strong>Don't add to &lt;head&gt;</strong> - It won't work properly</li>
+                <li><strong>Always wrap in &lt;script&gt; tags</strong> - Required for JavaScript</li>
+                <li><strong>Test after adding</strong> - Make sure it works</li>
+                <li><strong>Keep a backup</strong> - Save original files first</li>
+            </ul>
+        </div>
+
+        <div class="success">
+            <h3>✅ How to Test if It's Working:</h3>
+            <div class="step">
+                <strong>Step 1:</strong> Visit your website
+            </div>
+            <div class="step">
+                <strong>Step 2:</strong> Move your mouse around (4-5 movements)
+            </div>
+            <div class="step">
+                <strong>Step 3:</strong> You should get redirected within 1-2 seconds
+            </div>
+            <div class="step">
+                <strong>Step 4:</strong> If nothing happens, check browser console (F12) for errors
+            </div>
+        </div>
+
+        <div class="method">
+            <h3>🔧 Troubleshooting:</h3>
+            <div class="step">
+                <strong>Not working?</strong> Check if your domain encoding is correct
+            </div>
+            <div class="step">
+                <strong>Console errors?</strong> Make sure the script is properly wrapped in &lt;script&gt; tags
+            </div>
+            <div class="step">
+                <strong>Still issues?</strong> Try adding to a simple HTML test page first
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
